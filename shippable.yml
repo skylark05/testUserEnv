@@ -1,7 +1,15 @@
 jobs:
+  - name: test0
+    type: runSh
+    steps:
+      - TASK:
+          script:
+            - echo triggeredByName $JOB_TRIGGERED_BY_NAME
+            - echo triggeredByUser $JOB_TRIGGERED_BY_USER
   - name: test1
     type: runSh
     steps:
+      - IN: test0
       - TASK:
           script:
             - echo triggeredByName $JOB_TRIGGERED_BY_NAME
