@@ -1,0 +1,8 @@
+jobs:
+  - name: test1
+    type: runSh
+    steps:
+      - TASK:
+          script:
+            - echo triggeredByName $JOB_TRIGGERED_BY_NAME
+            - echo triggeredByUser $JOB_TRIGGERED_BY_USER
